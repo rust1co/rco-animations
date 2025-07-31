@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Amatic+SC:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Gabriela', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+    padding: 1.25rem;
+    overflow: hidden;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    background: url('assets/background.png') center/cover no-repeat;
+    border-radius: 0.625rem;
+    padding: 1.5rem;
+    width: 25rem;
+    max-width: 90vw;
+    height: auto;
+    min-height: 44.4rem;
+    max-height: 90vh;
+    overflow: visible;
+    display: none;
+    z-index: 1000;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    min-height: 4rem;
+    background: url('assets/header.png') center/contain no-repeat;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Gabriela', serif;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+    outline: none;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 1.25rem;
+    border-bottom: none;
+    background: url('assets/divider.png') center bottom/contain no-repeat;
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #ccc;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    color: #fff;
+    border-bottom: none;
+    background: url('assets/divider.png') center bottom/contain no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.tab-content {
+    display: none;
+    height: auto;
+    max-height: calc(80vh - 14rem);
+    overflow: hidden;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 100%;
+    overflow: visible;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.3125rem;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Gabriela', serif;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0.3125rem;
+    background: url('assets/toast.png') center/cover no-repeat;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    font-family: 'Gabriela', serif;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.input-group select {
+    cursor: pointer;
+}
+
+.input-group select option[disabled] {
+    font-weight: 600;
+    font-style: italic;
+    padding: 0.5rem 0.75rem;
+}
+
+#scenario-search {
+    background-image: url('assets/lupa.png'), url('assets/toast.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0.75rem center, center;
+    background-size: 1rem, cover;
+    padding-left: 2.5rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: #fff;
+    font-family: 'Gabriela', serif;
+    width: 80%;
+    max-width: 15rem;
+}
+
+#scenario-search:focus {
+    color: #fff;
+}
+
+.error {
+    margin-top: 0.625rem;
+    padding: 0.5rem;
+    color: #ffffff;
+    font-size: 0.75rem;
+    white-space: pre-line;
+    font-family: 'Gabriela', serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    min-width: 5rem;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-image 0.3s ease;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    background: url('assets/botao.png') center/cover no-repeat;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    outline: none;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    background: url('assets/botao.png') center/cover no-repeat;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.btn:hover,
+.btn:focus {
+    background: url('assets/botao2.png') center/cover no-repeat;
+}
+
+.info {
+    margin-top: 1rem;
+    padding: 0.625rem;
+    font-size: 0.75rem;
+    color: #fff;
+    font-family: 'Gabriela', serif;
+}
+
+.info p {
+    margin: 0.3125rem 0;
+}
+
+.search-container {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+
+
+.scenario-results {
+    height: 15rem;
+    max-height: 15rem;
+    overflow-y: auto;
+    border: none;
+    border-radius: 0.3125rem;
+    margin-bottom: 1rem;
+}
+
+.scenario-result-item {
+    padding: 0.2rem 0.35rem;
+    cursor: pointer;
+    border-bottom: 0.0625rem solid #333;
+    color: #fff;
+    font-size: 0.875rem;
+    font-family: 'Gabriela', serif;
+}
+
+.scenario-result-item:last-child {
+    border-bottom: none;
+}
+
+.scenario-result-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.scenario-result-item.selected {
+    padding-left: 1.5rem;
+    background: url('assets/botao2.png') center/cover no-repeat;
+}
+
+.no-results {
+    padding: 1rem;
+    text-align: center;
+    color: #ccc;
+    font-style: italic;
+    font-family: 'Gabriela', serif;
+} 

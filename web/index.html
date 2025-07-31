@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCO Animations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="display: none;">
+        <div class="header">
+            <h1>Animation Tester</h1>
+            <button class="close-btn" onclick="closeUI()">×</button>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn" onclick="switchTab('animations')">Animations</button>
+            <button class="tab-btn active" onclick="switchTab('scenarios-list')">Scenarios List</button>
+        </div>
+        
+        <div id="animations-tab" class="tab-content">
+            <h2 style="text-align: center; margin-bottom: 1rem; background: url('assets/divider.png') center bottom/contain no-repeat; padding-bottom: 1rem;">Animation Input</h2>
+            
+            <div class="info" style="margin-bottom: 1rem;">
+                <p>Format: animation_dict animation_name</p>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="animation" placeholder="Ex: script_proc@robberies@shop@valdoc@ig_4 count_breakout_coins02" style="background-image: url('assets/lupa.png'), url('assets/toast.png'); background-repeat: no-repeat, no-repeat; background-position: 0.75rem center, center; background-size: 1rem, cover; padding-left: 2.5rem; padding-right: 0.75rem; padding-top: 0.5rem; padding-bottom: 0.5rem; color: #fff; font-family: 'Gabriela', serif; width: 80%; max-width: 15rem;">
+            </div>
+            
+            <div class="error" id="error-anim"></div>
+            
+            <div class="buttons">
+                <button class="btn btn-primary" onclick="applyAnimation()">Play</button>
+                <button class="btn btn-danger" onclick="stopAnimation()">Stop</button>
+            </div>
+        </div>
+        
+        <div id="scenarios-list-tab" class="tab-content active">
+            <h2 style="text-align: center; margin-bottom: 1rem; background: url('assets/divider.png') center bottom/contain no-repeat; padding-bottom: 1rem;">Scenarios List</h2>
+            <p class="info">Type a term to search scenarios. Ped Model will be detected automatically.</p>
+            
+            <div class="search-container">
+                <input type="text" id="scenario-search" placeholder="Search scenarios..." oninput="filterScenarios()">
+            </div>
+            
+            <div id="scenario-results" class="scenario-results"></div>
+            
+            <div class="buttons">
+                <button class="btn btn-primary" onclick="applyScenarioFromList()">Play</button>
+                <button class="btn btn-secondary" onclick="copyScenarioName()">Copy</button>
+                <button class="btn btn-danger" onclick="stopScenario()">Stop</button>
+            </div>
+            
+            <div id="error-scen-list" class="error"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
