@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RCO Animations - RedM Animation & Scenario Viewer
 
 A highly developed and configurable animation and scenario testing tool for RedM servers. This resource provides a comprehensive interface for viewing, testing, and copying all conditional animations and scenarios available in RedM.
@@ -139,3 +140,7 @@ This resource is provided as-is for use on RedM servers. Please respect the orig
 ---
 
 **RCO Animations** - Making RedM development easier, one animation at a time. 
+=======
+# rco-animations
+A Dev tool to visualize scenarios and animations
+>>>>>>> a790ed413832557a616215c36f3f1cdf6c941c3e
